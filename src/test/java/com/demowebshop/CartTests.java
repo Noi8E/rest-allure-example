@@ -58,14 +58,14 @@ public class CartTests extends TestBase {
                     .body("message", is("The product has been added to your <a href=\"/cart\">shopping cart</a>"))
                     .body("updatetopcartsectionhtml", is("(1)"));
 
-            step("open logo for create browser-session", () ->
-                    open(baseUrl + "/Themes/DefaultClean/Content/images/logo.png")
-            );
-
-
-            step("Inject cookie", () ->
-                    getWebDriver().manage().addCookie(new Cookie("Nop.customer", HARD_COOKIE))
-            );
+//            step("open logo for create browser-session", () ->
+//                    open(baseUrl + "/Themes/DefaultClean/Content/images/logo.png")
+//            );
+//
+//
+//            step("Inject cookie", () ->
+//                    getWebDriver().manage().addCookie(new Cookie("Nop.customer", HARD_COOKIE))
+//            );
 
 
         });
