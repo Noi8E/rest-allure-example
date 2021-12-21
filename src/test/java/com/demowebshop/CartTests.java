@@ -7,6 +7,7 @@ import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static filters.CustomLogFilter.customLogFilter;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
@@ -16,7 +17,7 @@ public class CartTests extends TestBase {
     @DisplayName("Можем добавить товар в корзину без куки в запросе")
     void canAddItemToCartWOCookie() {
         given()
-                .filter(new AllureRestAssured())
+                .filter(customLogFilter().withCustomTemplates())
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body("addtocart_14.EnteredQuantity=1")
                 .when()
